@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Agency for SaaS & Professional Services | Apollo Technologies</title>
-    <!-- Complete Favicon Code -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -13,11 +13,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-
-        /* YOUR EXISTING CSS STARTS HERE - DON'T DELETE ANYTHING BELOW */
-        :root {
-            --primary: #2563eb;
-        /* CSS Variables */
+        /* ===== CSS Variables ===== */
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
@@ -34,7 +30,7 @@
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
 
-        /* Base Styles */
+        /* ===== Base Styles ===== */
         * {
             margin: 0;
             padding: 0;
@@ -122,7 +118,7 @@
             margin: 0 auto 3rem;
         }
 
-        /* Header Styles */
+        /* ===== Header ===== */
         header {
             background-color: white;
             box-shadow: var(--shadow);
@@ -147,26 +143,14 @@
             align-items: center;
         }
 
-        /* ADD LOGO STYLES RIGHT HERE */
         .logo-img {
-            height: 60px; /* Adjust this value to make it smaller/bigger */
+            height: 60px;
             width: auto;
             margin-right: 12px;
         }
 
-        /* Hide the rocket icon since we're using an image */
         .logo i {
             display: none;
-        }
-        /* END OF LOGO STYLES */
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-        .logo i {
-            margin-right: 10px;
-            font-size: 2rem;
         }
 
         .nav-links {
@@ -211,7 +195,7 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
+        /* ===== Hero Section ===== */
         .hero {
             background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
             color: white;
@@ -261,7 +245,7 @@
             flex-wrap: wrap;
         }
 
-        /* Paths Section */
+        /* ===== Paths Section ===== */
         .paths {
             background-color: white;
         }
@@ -303,7 +287,7 @@
             margin-bottom: 25px;
         }
 
-        /* Services Section */
+        /* ===== Services Section ===== */
         .services {
             background-color: var(--light);
         }
@@ -344,7 +328,7 @@
             color: var(--gray);
         }
 
-        /* About Section */
+        /* ===== About Section ===== */
         .about {
             background-color: white;
         }
@@ -384,7 +368,7 @@
             transform: scale(1.05);
         }
 
-        /* Contact Section */
+        /* ===== Contact Section ===== */
         .contact {
             background-color: var(--light);
         }
@@ -495,7 +479,7 @@
             transform: translateY(-2px);
         }
 
-        /* Footer */
+        /* ===== Footer ===== */
         footer {
             background-color: var(--dark);
             color: white;
@@ -557,7 +541,7 @@
             transform: translateY(-3px);
         }
 
-        /* Chat Button Styles */
+        /* ===== Floating Chat Button ===== */
         .chat-button-container {
             position: fixed;
             bottom: 30px;
@@ -593,57 +577,48 @@
             font-size: 1rem;
         }
 
-        /* Responsive Styles */
+        /* ===== Responsive Styles ===== */
         @media (max-width: 992px) {
             .hero-title {
                 font-size: 2.8rem;
             }
-            
             .paths-grid,
             .about-content,
             .contact-grid {
                 grid-template-columns: 1fr;
             }
-            
             .about-image {
                 order: -1;
             }
         }
 
         @media (max-width: 768px) {
-            .nav-links, .nav-actions {
+            .nav-links,
+            .nav-actions {
                 display: none;
             }
-            
             .mobile-menu {
                 display: block;
             }
-            
             .hero-title {
                 font-size: 2.2rem;
             }
-            
             .hero-subtitle {
                 font-size: 1.1rem;
             }
-            
             .section-title {
                 font-size: 2rem;
             }
-
             .chat-button-container {
                 bottom: 20px;
                 right: 20px;
             }
-            
             .chat-button {
                 padding: 12px 16px;
             }
-            
             .chat-text {
                 display: none;
             }
-            
             .chat-button i {
                 font-size: 1.4rem;
                 margin: 0;
@@ -655,7 +630,6 @@
                 flex-direction: column;
                 align-items: center;
             }
-            
             .btn {
                 width: 100%;
                 max-width: 250px;
@@ -668,9 +642,9 @@
     <header>
         <div class="container">
             <nav class="navbar">
-              <a href="#" class="logo">
-       <img src="logo.png" alt="Apollo Technologies US" class="logo-img">
-    Apollo Technologies US 
+                <a href="#" class="logo">
+                    <img src="logo.png" alt="Apollo Technologies US" class="logo-img">
+                    Apollo Technologies US
                 </a>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
@@ -712,7 +686,7 @@
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <h3 class="path-title">SaaS Companies</h3>
-                    <p class="path-description">Embed in app copilots that boost retention and guide users to success</p>
+                    <p class="path-description">Embed in-app copilots that boost retention and guide users to success</p>
                     <a href="#contact" class="btn btn-primary">Learn More</a>
                 </div>
                 <div class="path-card">
@@ -731,7 +705,7 @@
     <section class="section services" id="services">
         <div class="container">
             <h2 class="section-title">Our AI Services</h2>
-            <p class="section-subtitle">We build vertical specific AI agents that solve real business problems, fast.</p>
+            <p class="section-subtitle">We build vertical-specific AI agents that solve real business problems, fast.</p>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
@@ -745,7 +719,7 @@
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3 class="service-title">Workflow Automation</h3>
-                    <p class="service-description">AI powered automation for proposals, reporting, and administrative tasks that save your team hours.</p>
+                    <p class="service-description">AI-powered automation for proposals, reporting, and administrative tasks that save your team hours.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -766,7 +740,7 @@
                     <h2>About Apollo AI Agency</h2>
                     <p>We specialize in crafting intelligent AI agents and copilots that revolutionize how B2B SaaS companies and professional service firms operate.</p>
                     <p>Our AI solutions are designed to automate and optimize your business processes, from customer engagement to internal operations, delivering measurable results in weeks, not months.</p>
-                    <p>Let us help you harness the power of AI to transform your business, smarter, faster, and future ready. Innovate with Apollo AI Agency, where intelligence meets execution.</p>
+                    <p>Let us help you harness the power of AI to transform your business, smarter, faster, and future-ready. Innovate with Apollo AI Agency, where intelligence meets execution.</p>
                     <a href="#contact" class="btn btn-primary">Let's Converse</a>
                 </div>
                 <div class="about-image">
@@ -820,19 +794,15 @@
                             </div>
                             <h4>Live Chat</h4>
                             <p>Chat with our AI assistant for instant answers to your questions</p>
-                            <a href="https://app.vectorshift.ai/chatbots/deployed/67dcdcc59e912624fc8f0430" target="_blank" class="method-btn">
-                                Start Chat
-                            </a>
+                            <a href="https://app.vectorshift.ai/chatbots/deployed/67dcdcc59e912624fc8f0430" target="_blank" class="method-btn">Start Chat</a>
                         </div>
                         <div class="contact-method">
                             <div class="method-icon">
                                 <i class="fas fa-calendar-check"></i>
                             </div>
                             <h4>Book a Call</h4>
-                            <p>Schedule a 30 minute consultation with our AI experts</p>
-                            <a href="https://calendly.com/revanaglobal/30min" target="_blank" class="method-btn">
-                                Schedule Now
-                            </a>
+                            <p>Schedule a 30-minute consultation with our AI experts</p>
+                            <a href="https://calendly.com/revanaglobal/30min" target="_blank" class="method-btn">Schedule Now</a>
                         </div>
                     </div>
                 </div>
@@ -846,12 +816,12 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Apollo Technologies US</h3>
-                    <p>Your partner for AI driven transformation. We help B2B SaaS companies and professional service firms embed intelligent AI agents.</p>
+                    <p>Your partner for AI-driven transformation. We help B2B SaaS companies and professional service firms embed intelligent AI agents.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -907,19 +877,16 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
+                if (targetId === '#') return;
                 const targetElement = document.querySelector(targetId);
-                if(targetElement) {
+                if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
                     // Close mobile menu if open
-                    if(window.innerWidth <= 768) {
+                    if (window.innerWidth <= 768) {
                         document.querySelector('.nav-links').style.display = 'none';
                     }
                 }
@@ -927,14 +894,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
