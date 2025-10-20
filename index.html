@@ -1,16 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Agency for SaaS & Professional Services | Apollo Technologies</title>
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* ===== FIX: Corrected :root block ===== */
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
@@ -26,23 +30,41 @@
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--dark);
             background-color: var(--light);
-            padding-top: 80px;
         }
-        a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
+
         .btn {
             display: inline-block;
             padding: 12px 28px;
@@ -53,33 +75,42 @@
             border: none;
             font-size: 16px;
         }
+
         .btn-primary {
             background-color: var(--primary);
             color: white;
         }
+
         .btn-primary:hover {
             background-color: var(--primary-dark);
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
         }
+
         .btn-secondary {
             background-color: transparent;
             color: var(--primary);
             border: 2px solid var(--primary);
         }
+
         .btn-secondary:hover {
             background-color: var(--primary);
             color: white;
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
         }
-        .section { padding: 80px 0; }
+
+        .section {
+            padding: 80px 0;
+        }
+
         .section-title {
             font-size: 2.5rem;
             margin-bottom: 1rem;
             color: var(--dark);
             text-align: center;
         }
+
         .section-subtitle {
             font-size: 1.2rem;
             color: var(--gray);
@@ -87,6 +118,8 @@
             max-width: 700px;
             margin: 0 auto 3rem;
         }
+
+        /* Header Styles */
         header {
             background-color: white;
             box-shadow: var(--shadow);
@@ -95,35 +128,45 @@
             top: 0;
             z-index: 1000;
         }
+
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
         }
+
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary);
             display: flex;
             align-items: center;
+            gap: 10px;
         }
+
         .logo-img {
-            height: 60px;
+            height: 40px;
             width: auto;
-            margin-right: 12px;
         }
-        .logo i { display: none; }
+
+        /* Desktop Nav - Right Aligned */
         .nav-links {
             display: flex;
             gap: 30px;
+            align-items: center;
         }
+
         .nav-links a {
             font-weight: 500;
             transition: var(--transition);
             position: relative;
         }
-        .nav-links a:hover { color: var(--primary); }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -134,17 +177,56 @@
             background-color: var(--primary);
             transition: var(--transition);
         }
-        .nav-links a:hover::after { width: 100%; }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
         .nav-actions {
             display: flex;
             gap: 15px;
             align-items: center;
         }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Mobile Menu Dropdown */
         .mobile-menu {
             display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: var(--shadow-lg);
+            flex-direction: column;
+            padding: 20px;
+            gap: 15px;
         }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-light);
+            font-weight: 500;
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
             color: white;
@@ -152,6 +234,18 @@
             position: relative;
             overflow: hidden;
         }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L1000,0 L1000,1000 L0,1000 Z M0,0 C250,150 750,150 1000,0 L1000,1000 L0,1000 Z"></path></svg>');
+            background-size: cover;
+        }
+
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
@@ -159,11 +253,13 @@
             position: relative;
             z-index: 1;
         }
+
         .hero-title {
             font-size: 3rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
+
         .hero-subtitle {
             font-size: 1.3rem;
             margin-bottom: 2.5rem;
@@ -172,45 +268,294 @@
             margin-left: auto;
             margin-right: auto;
         }
+
         .hero-actions {
             display: flex;
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
+
+        /* Paths Section */
+        .paths {
+            background-color: white;
+        }
+
+        .paths-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .path-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .path-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .path-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .path-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .path-description {
+            color: var(--gray);
+            margin-bottom: 25px;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-description {
+            color: var(--gray);
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: var(--dark);
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            margin-right: 15px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-method {
+            text-align: center;
+            padding: 25px;
+            border-radius: 10px;
+            background: var(--light);
+            transition: var(--transition);
+        }
+
+        .contact-method:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .method-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .contact-method h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .contact-method p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .method-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .method-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
         footer {
             background-color: var(--dark);
             color: white;
             padding: 60px 0 30px;
         }
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
+
         .footer-column h3 {
             font-size: 1.3rem;
             margin-bottom: 20px;
             color: white;
         }
-        .footer-column ul li { margin-bottom: 10px; }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
         .footer-column ul li a {
             color: var(--gray-light);
             transition: var(--transition);
         }
-        .footer-column ul li a:hover { color: white; }
+
+        .footer-column ul li a:hover {
+            color: white;
+        }
+
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--gray-light);
         }
+
         .social-links {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
+
         .social-links a {
             display: flex;
             align-items: center;
@@ -221,16 +566,20 @@
             border-radius: 50%;
             transition: var(--transition);
         }
+
         .social-links a:hover {
             background-color: var(--primary);
             transform: translateY(-3px);
         }
+
+        /* Chat Button */
         .chat-button-container {
             position: fixed;
             bottom: 30px;
             right: 30px;
             z-index: 1000;
         }
+
         .chat-button {
             display: flex;
             align-items: center;
@@ -244,65 +593,79 @@
             font-weight: 600;
             text-decoration: none;
         }
+
         .chat-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             color: white;
         }
-        .chat-button i { font-size: 1.2rem; }
-        .chat-text { font-size: 1rem; }
 
+        .chat-button i {
+            font-size: 1.2rem;
+        }
+
+        .chat-text {
+            font-size: 1rem;
+        }
+
+        /* ===== Responsive Design ===== */
         @media (max-width: 992px) {
-            .hero-title { font-size: 2.8rem; }
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .paths-grid,
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
         }
 
         @media (max-width: 768px) {
-            body {
-                padding-top: 70px;
-            }
-            .nav-links,
-            .nav-actions {
+            /* Hide desktop nav */
+            .nav-links, .nav-actions {
                 display: none;
             }
-            .mobile-menu {
+            
+            /* Show mobile menu button */
+            .mobile-menu-btn {
                 display: block;
             }
-            .nav-links.mobile-active {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 20px;
-                box-shadow: var(--shadow-lg);
-                z-index: 999;
-                display: flex !important;
+
+            /* Adjust hero */
+            .hero-title {
+                font-size: 2.2rem;
             }
-            .nav-links li {
-                width: 100%;
-                margin: 12px 0;
-            }
-            .nav-links a {
-                color: var(--dark);
+            
+            .hero-subtitle {
                 font-size: 1.1rem;
-                font-weight: 600;
-                padding: 8px 0;
             }
-            .nav-links a:hover {
-                color: var(--primary);
+            
+            .section-title {
+                font-size: 2rem;
             }
-            .nav-links a::after {
+
+            .chat-button-container {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .chat-button {
+                padding: 12px 16px;
+            }
+            
+            .chat-text {
                 display: none;
             }
-            .hero-title { font-size: 2.2rem; }
-            .hero-subtitle { font-size: 1.1rem; }
-            .section-title { font-size: 2rem; }
-            .chat-button-container { bottom: 20px; right: 20px; }
-            .chat-button { padding: 12px 16px; }
-            .chat-text { display: none; }
-            .chat-button i { font-size: 1.4rem; margin: 0; }
+            
+            .chat-button i {
+                font-size: 1.4rem;
+                margin: 0;
+            }
         }
 
         @media (max-width: 576px) {
@@ -310,6 +673,7 @@
                 flex-direction: column;
                 align-items: center;
             }
+            
             .btn {
                 width: 100%;
                 max-width: 250px;
@@ -318,43 +682,170 @@
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="index.html" class="logo">
+                <a href="#home" class="logo">
                     <img src="logo.png" alt="Apollo Technologies US" class="logo-img">
                     Apollo Technologies US
                 </a>
+
+                <!-- Desktop Navigation (Right Aligned) -->
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="solutions.html">Solutions</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#paths">Solutions</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
+
                 <div class="nav-actions">
                     <a href="https://calendly.com/revanaglobal/30min" target="_blank" class="btn btn-primary">Book a Call</a>
                 </div>
-                <div class="mobile-menu">
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
-                </div>
+                </button>
+
+                <!-- Mobile Dropdown Menu -->
+                <ul class="mobile-menu" id="mobileMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#paths">Solutions</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <a href="https://calendly.com/revanaglobal/30min" target="_blank" class="btn btn-primary" style="width:100%; text-align:center;">Book a Call</a>
+                    </li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">AI That Works for Your Business</h1>
-                <p class="hero-subtitle">We help <strong>B2B SaaS companies</strong> and <strong>professional service firms</strong> embed intelligent AI agents that drive user success, reduce admin work, and accelerate growth.</p>
+                <h1 class="hero-title">AI That Works for Your Business, Not Just Your Chat Window</h1>
+                <p class="hero-subtitle">We help <strong>B2B SaaS companies</strong> and <strong>professional service firms</strong> embed intelligent AI agents that drive user success, reduce admin work, and accelerate growth. Delivered in 4 to 6 weeks.</p>
                 <div class="hero-actions">
-                    <a href="solutions.html" class="btn btn-primary">Explore Solutions</a>
-                    <a href="contact.html" class="btn btn-secondary">Book a Call</a>
+                    <a href="#paths" class="btn btn-primary">For SaaS Companies</a>
+                    <a href="#paths" class="btn btn-secondary">For Service Firms</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Paths Section -->
+    <section class="section paths" id="paths">
+        <div class="container">
+            <div class="paths-grid">
+                <div class="path-card">
+                    <div class="path-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3 class="path-title">SaaS Companies</h3>
+                    <p class="path-description">Embed in-app copilots that boost retention and guide users to success</p>
+                    <a href="#contact" class="btn btn-primary">Learn More</a>
+                </div>
+                <div class="path-card">
+                    <div class="path-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3 class="path-title">Service Firms</h3>
+                    <p class="path-description">Automate proposals, reporting and admin work to recover 10+ hours per week</p>
+                    <a href="#contact" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our AI Services</h2>
+            <p class="section-subtitle">We build vertical-specific AI agents that solve real business problems, fast.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-robot"></i></div>
+                    <h3 class="service-title">AI Agents and Copilots</h3>
+                    <p class="service-description">Intelligent assistants that guide users, answer questions, and drive adoption within your applications.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="service-title">Workflow Automation</h3>
+                    <p class="service-description">AI-powered automation for proposals, reporting, and administrative tasks that save your team hours.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                    <h3 class="service-title">Integration and Deployment</h3>
+                    <p class="service-description">Seamless integration with your existing tools and platforms, delivered in 4 to 6 weeks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Apollo AI Agency</h2>
+                    <p>We specialize in crafting intelligent AI agents and copilots that revolutionize how B2B SaaS companies and professional service firms operate.</p>
+                    <p>Our AI solutions are designed to automate and optimize your business processes, from customer engagement to internal operations, delivering measurable results in weeks, not months.</p>
+                    <p>Let us help you harness the power of AI to transform your business, smarter, faster, and future-ready. Innovate with Apollo AI Agency, where intelligence meets execution.</p>
+                    <a href="#contact" class="btn btn-primary">Let's Converse</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="AI Technology">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Converse</h2>
+            <p class="section-subtitle">Ready to transform your business with AI? Get in touch with our team today.</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Our team is ready to help you implement AI solutions that drive real business results.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div><p>Robinpandey@apollotechnologiesus.com</p></div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div><p>469 554 9909</p></div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div><p>7511 Main Street, Suite 200</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon"><i class="fas fa-comments"></i></div>
+                            <h4>Live Chat</h4>
+                            <p>Chat with our AI assistant for instant answers to your questions</p>
+                            <a href="https://app.vectorshift.ai/chatbots/deployed/67dcdcc59e912624fc8f0430" target="_blank" class="method-btn">Start Chat</a>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon"><i class="fas fa-calendar-check"></i></div>
+                            <h4>Book a Call</h4>
+                            <p>Schedule a 30-minute consultation with our AI experts</p>
+                            <a href="https://calendly.com/revanaglobal/30min" target="_blank" class="method-btn">Schedule Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -362,29 +853,29 @@
                     <h3>Apollo Technologies US</h3>
                     <p>Your partner for AI-driven transformation. We help B2B SaaS companies and professional service firms embed intelligent AI agents.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#paths">Solutions</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Solutions</h3>
                     <ul>
-                        <li><a href="solutions.html">For SaaS Companies</a></li>
-                        <li><a href="solutions.html">For Service Firms</a></li>
-                        <li><a href="services.html">AI Agents and Copilots</a></li>
-                        <li><a href="services.html">Workflow Automation</a></li>
+                        <li><a href="#paths">For SaaS Companies</a></li>
+                        <li><a href="#paths">For Service Firms</a></li>
+                        <li><a href="#services">AI Agents and Copilots</a></li>
+                        <li><a href="#services">Workflow Automation</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -392,7 +883,7 @@
                     <ul>
                         <li><i class="fas fa-envelope"></i> Robinpandey@apollotechnologiesus.com</li>
                         <li><i class="fas fa-phone"></i> 469 554 9909</li>
-                        <li><i class="fas fa-map-marker-alt"></i> 7511 Main Street, Suite 200<br>Frisco, TX 75034</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 7511 Main Street, Suite 200</li>
                     </ul>
                 </div>
             </div>
@@ -402,6 +893,7 @@
         </div>
     </footer>
 
+    <!-- Floating Chat Button -->
     <div class="chat-button-container">
         <a href="https://app.vectorshift.ai/chatbots/deployed/67dcdcc59e912624fc8f0430" target="_blank" class="chat-button">
             <i class="fas fa-comments"></i>
@@ -410,14 +902,42 @@
     </div>
 
     <script>
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('mobile-active');
-        });
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobileMenu');
 
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.nav-links').classList.remove('mobile-active');
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking a link (on mobile)
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                });
+            });
+
+            // Smooth scrolling for all anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
             });
         });
     </script>
