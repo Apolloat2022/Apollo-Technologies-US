@@ -33,6 +33,7 @@
             line-height: 1.6;
             color: var(--dark);
             background-color: var(--light);
+            padding-top: 80px;
         }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
@@ -138,6 +139,11 @@
             display: flex;
             gap: 15px;
             align-items: center;
+              @media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+}
         }
         .mobile-menu {
             display: none;
@@ -377,3 +383,4 @@
 </body>
 
 </html>
+
