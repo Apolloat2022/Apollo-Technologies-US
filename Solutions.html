@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Agency for SaaS & Professional Services | Apollo Technologies</title>
+    <title>Solutions | Apollo Technologies</title>
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -11,6 +11,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* PASTE THE EXACT SAME CSS AS ABOVE (from :root to @media) */
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
@@ -144,38 +145,39 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-        .hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
-            padding: 160px 0 100px;
-            position: relative;
-            overflow: hidden;
+        .paths {
+            background-color: white;
         }
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
+        .paths-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .path-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
             text-align: center;
-            position: relative;
-            z-index: 1;
         }
-        .hero-title {
+        .path-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        .path-icon {
             font-size: 3rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
+            color: var(--primary);
+            margin-bottom: 20px;
         }
-        .hero-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        .path-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--dark);
         }
-        .hero-actions {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+        .path-description {
+            color: var(--gray);
+            margin-bottom: 25px;
         }
         footer {
             background-color: var(--dark);
@@ -251,28 +253,16 @@
         .chat-button i { font-size: 1.2rem; }
         .chat-text { font-size: 1rem; }
         @media (max-width: 992px) {
-            .hero-title { font-size: 2.8rem; }
+            .paths-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
             .nav-links, .nav-actions { display: none; }
             .mobile-menu { display: block; }
-            .hero-title { font-size: 2.2rem; }
-            .hero-subtitle { font-size: 1.1rem; }
             .section-title { font-size: 2rem; }
             .chat-button-container { bottom: 20px; right: 20px; }
             .chat-button { padding: 12px 16px; }
             .chat-text { display: none; }
             .chat-button i { font-size: 1.4rem; margin: 0; }
-        }
-        @media (max-width: 576px) {
-            .hero-actions {
-                flex-direction: column;
-                align-items: center;
-            }
-            .btn {
-                width: 100%;
-                max-width: 250px;
-            }
         }
     </style>
 </head>
@@ -301,14 +291,22 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="section paths">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">AI That Works for Your Business</h1>
-                <p class="hero-subtitle">We help <strong>B2B SaaS companies</strong> and <strong>professional service firms</strong> embed intelligent AI agents that drive user success, reduce admin work, and accelerate growth.</p>
-                <div class="hero-actions">
-                    <a href="solutions.html" class="btn btn-primary">Explore Solutions</a>
-                    <a href="contact.html" class="btn btn-secondary">Book a Call</a>
+            <h2 class="section-title">Our Solutions</h2>
+            <p class="section-subtitle">Tailored AI for your business model</p>
+            <div class="paths-grid">
+                <div class="path-card">
+                    <div class="path-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3 class="path-title">For SaaS Companies</h3>
+                    <p class="path-description">Embed in-app copilots that boost retention, reduce support tickets, and guide users to "aha!" moments.</p>
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="path-card">
+                    <div class="path-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3 class="path-title">For Service Firms</h3>
+                    <p class="path-description">Automate proposals, client reporting, and admin work to recover 10+ hours per week.</p>
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
                 </div>
             </div>
         </div>
@@ -319,7 +317,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Apollo Technologies US</h3>
-                    <p>Your partner for AI-driven transformation. We help B2B SaaS companies and professional service firms embed intelligent AI agents.</p>
+                    <p>Your partner for AI-driven transformation.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>

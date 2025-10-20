@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Agency for SaaS & Professional Services | Apollo Technologies</title>
+    <title>Services | Apollo Technologies</title>
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -11,6 +11,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* SAME CSS AS ABOVE */
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
@@ -144,38 +145,38 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-        .hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
-            padding: 160px 0 100px;
-            position: relative;
-            overflow: hidden;
+        .services {
+            background-color: var(--light);
         }
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
             text-align: center;
-            position: relative;
-            z-index: 1;
         }
-        .hero-title {
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        .service-icon {
             font-size: 3rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
+            color: var(--primary);
+            margin-bottom: 20px;
         }
-        .hero-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
         }
-        .hero-actions {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+        .service-description {
+            color: var(--gray);
         }
         footer {
             background-color: var(--dark);
@@ -250,29 +251,14 @@
         }
         .chat-button i { font-size: 1.2rem; }
         .chat-text { font-size: 1rem; }
-        @media (max-width: 992px) {
-            .hero-title { font-size: 2.8rem; }
-        }
         @media (max-width: 768px) {
             .nav-links, .nav-actions { display: none; }
             .mobile-menu { display: block; }
-            .hero-title { font-size: 2.2rem; }
-            .hero-subtitle { font-size: 1.1rem; }
             .section-title { font-size: 2rem; }
             .chat-button-container { bottom: 20px; right: 20px; }
             .chat-button { padding: 12px 16px; }
             .chat-text { display: none; }
             .chat-button i { font-size: 1.4rem; margin: 0; }
-        }
-        @media (max-width: 576px) {
-            .hero-actions {
-                flex-direction: column;
-                align-items: center;
-            }
-            .btn {
-                width: 100%;
-                max-width: 250px;
-            }
         }
     </style>
 </head>
@@ -301,14 +287,25 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="section services">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">AI That Works for Your Business</h1>
-                <p class="hero-subtitle">We help <strong>B2B SaaS companies</strong> and <strong>professional service firms</strong> embed intelligent AI agents that drive user success, reduce admin work, and accelerate growth.</p>
-                <div class="hero-actions">
-                    <a href="solutions.html" class="btn btn-primary">Explore Solutions</a>
-                    <a href="contact.html" class="btn btn-secondary">Book a Call</a>
+            <h2 class="section-title">Our AI Services</h2>
+            <p class="section-subtitle">We build vertical-specific AI agents that solve real business problems, fast.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-robot"></i></div>
+                    <h3 class="service-title">AI Agents & Copilots</h3>
+                    <p class="service-description">Custom AI assistants embedded in your app or workflow to guide users, answer questions, and drive adoption.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="service-title">Workflow Automation</h3>
+                    <p class="service-description">Automate repetitive tasks like proposal generation, client reporting, and data entry.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                    <h3 class="service-title">Integration & Deployment</h3>
+                    <p class="service-description">Seamless integration with your stack (Slack, Salesforce, HubSpot, etc.) in 4–6 weeks.</p>
                 </div>
             </div>
         </div>
@@ -319,7 +316,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Apollo Technologies US</h3>
-                    <p>Your partner for AI-driven transformation. We help B2B SaaS companies and professional service firms embed intelligent AI agents.</p>
+                    <p>Your partner for AI-driven transformation.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
