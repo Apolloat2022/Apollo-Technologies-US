@@ -651,6 +651,9 @@
             .section-title {
                 font-size: 2rem;
             }
+            .hero {
+                padding-top: 200px;
+            }
 
             .chat-button-container {
                 bottom: 20px;
@@ -925,37 +928,50 @@
 
    <script>
     // Mobile Menu Toggle
-    document.addEventListener('DOMContentLoaded', function() {
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const mobileMenu = document.getElementById('mobileMenu');
 
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking a link
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
+        // Only initialize if mobile menu elements exist
+        if (mobileMenuBtn && mobileMenu) {
+            // Toggle menu on button click
+            mobileMenuBtn.addEventListener('click', function () {
+                mobileMenu.classList.toggle('active');
             });
-        });
 
-        // Smooth scrolling with dynamic header offset
+            // Close menu when clicking a link inside
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        }
+
+        // Smooth scrolling for all anchor links (#home, #services, etc.)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
+                // Skip if href is just "#"
+                if (this.getAttribute('href') === '#') return;
+
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
-                if (targetId === '#' || !targetId) return;
-
                 const targetElement = document.querySelector(targetId);
+
                 if (targetElement) {
-                    // Get actual header height (works on mobile & desktop)
                     const header = document.querySelector('header');
                     const headerHeight = header ? header.offsetHeight : 80;
 
                     const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10; // extra 10px buffer
+                    const offsetPosition = window.pageYOffset + elementPosition - headerHeight - 10;
 
                     window.scrollTo({
                         top: offsetPosition,
@@ -969,6 +985,7 @@
 </body>
 
 </html>
+
 
 
 
