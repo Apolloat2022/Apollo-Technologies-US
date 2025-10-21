@@ -610,7 +610,7 @@
             font-size: 1rem;
         }
 
-                  /* ===== Responsive Design ===== */
+     /* ===== Responsive Design ===== */
         @media (max-width: 992px) {
             .hero-title {
                 font-size: 2.8rem;
@@ -628,7 +628,7 @@
         }
 
         @media (max-width: 768px) {
-            /* Hide desktop nav */
+            /* Hide desktop navigation */
             .nav-links,
             .nav-actions {
                 display: none;
@@ -639,16 +639,25 @@
                 display: block;
             }
 
-            /* Ensure mobile menu appears above header */
+            /* Ensure mobile dropdown appears above header */
             .mobile-menu {
                 z-index: 1001;
                 background: white;
             }
 
-            /* Adjust hero */
+            /* Increase top padding for ALL sections to clear taller mobile header */
+            .section {
+                padding-top: 120px;
+                padding-bottom: 60px;
+            }
+
+            /* Home hero needs even more top space */
             .hero {
                 padding-top: 200px;
+                padding-bottom: 80px;
             }
+
+            /* Typography adjustments */
             .hero-title {
                 font-size: 2.2rem;
             }
@@ -661,6 +670,7 @@
                 font-size: 2rem;
             }
 
+            /* Floating chat button adjustments */
             .chat-button-container {
                 bottom: 20px;
                 right: 20px;
@@ -988,6 +998,7 @@
     </script>
 </body>
 </html>
+
 
 
 
